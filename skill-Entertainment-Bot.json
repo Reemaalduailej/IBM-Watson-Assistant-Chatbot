@@ -1,0 +1,743 @@
+{
+  "intents": [
+    {
+      "intent": "Action_Movie",
+      "examples": [
+        {
+          "text": "Action Movie"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Book_Genre_Crime",
+      "examples": [
+        {
+          "text": "Crime"
+        },
+        {
+          "text": "Crime/Mystery"
+        },
+        {
+          "text": "Mystery"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Book_Genres_Fiction",
+      "examples": [
+        {
+          "text": "Fiction"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Books",
+      "examples": [
+        {
+          "text": "1"
+        },
+        {
+          "text": "1."
+        },
+        {
+          "text": "a book"
+        },
+        {
+          "text": "a book recommendation"
+        },
+        {
+          "text": "book"
+        },
+        {
+          "text": "Books"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Books_Genres_Classics",
+      "examples": [
+        {
+          "text": "1"
+        },
+        {
+          "text": "1."
+        },
+        {
+          "text": "classic"
+        },
+        {
+          "text": "classic please"
+        },
+        {
+          "text": "classics"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Drama_based_on_book",
+      "examples": [
+        {
+          "text": "Drama based on book"
+        },
+        {
+          "text": "Drama movie based on book"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Drama_Movie",
+      "examples": [
+        {
+          "text": "Drama Movie"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Hello",
+      "examples": [
+        {
+          "text": "Hello"
+        },
+        {
+          "text": "Hey"
+        },
+        {
+          "text": "Hi"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Help",
+      "examples": [
+        {
+          "text": "Can you"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Horror_based_on_book",
+      "examples": [
+        {
+          "text": "Horror based on book"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Horror_Book",
+      "examples": [
+        {
+          "text": "Horror"
+        },
+        {
+          "text": "Horror Book"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Horror_Movie",
+      "examples": [
+        {
+          "text": "Horror Movie"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Movies",
+      "examples": [
+        {
+          "text": "Movies"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Movies_based_on_Books",
+      "examples": [
+        {
+          "text": "Movies based on books"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Mystery_based_on_book",
+      "examples": [
+        {
+          "text": "Mystery based on book"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Romance_based_on_book",
+      "examples": [
+        {
+          "text": "romance based on book"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Science_Fiction",
+      "examples": [
+        {
+          "text": "Science Fiction Movie"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Thanks",
+      "examples": [
+        {
+          "text": "great"
+        },
+        {
+          "text": "Thanks"
+        },
+        {
+          "text": "thanks!"
+        },
+        {
+          "text": "Thank you"
+        },
+        {
+          "text": "thank you!"
+        },
+        {
+          "text": "thnx"
+        },
+        {
+          "text": "tnx"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "TV_shows_genres",
+      "examples": [
+        {
+          "text": "series"
+        },
+        {
+          "text": "tv shows"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Sorry I didn't get that, can you rephrase please"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_9_1626275734061",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "Horror",
+      "output": {
+        "generic": [
+          {
+            "title": "I recommend The Shining by Stephen King",
+            "source": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1353277730l/11588.jpg",
+            "response_type": "image"
+          }
+        ]
+      },
+      "conditions": "#Horror_Book",
+      "dialog_node": "node_10_1626278362315",
+      "previous_sibling": "node_2_1626277968423"
+    },
+    {
+      "type": "standard",
+      "title": "Drama Movie based on book",
+      "output": {
+        "generic": [
+          {
+            "title": "I recommend Little Women (2019)",
+            "source": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS11_0-LUr9stA36SHACO5wfd4l2jD_W_1lywxz5oHksb7EvnvT",
+            "description": "7.8/10 IMDb",
+            "response_type": "image"
+          }
+        ]
+      },
+      "conditions": "#Drama_based_on_book",
+      "dialog_node": "node_10_1626292451940",
+      "previous_sibling": "node_5_1626291968684"
+    },
+    {
+      "type": "standard",
+      "title": "Romance based on book",
+      "output": {
+        "generic": [
+          {
+            "title": "Pride and Prejudice (2005)",
+            "source": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTOITbD3D2aiWhBqdiWLUrS5oxlsatwO4WaKxqC1yseG_jCyb3c",
+            "description": "IMDb 7.8/10",
+            "response_type": "image"
+          }
+        ]
+      },
+      "conditions": "#Romance_based_on_book",
+      "dialog_node": "node_1_1627746625039",
+      "previous_sibling": "node_4_1627746742815"
+    },
+    {
+      "type": "standard",
+      "title": "Classics",
+      "output": {
+        "generic": [
+          {
+            "title": "I recommend Pride and Prejudice by Jane Austen",
+            "source": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1320399351l/1885.jpg",
+            "response_type": "image"
+          }
+        ]
+      },
+      "conditions": "#Books_Genres_Classics",
+      "dialog_node": "node_2_1626274857331",
+      "previous_sibling": "node_3_1626275816724"
+    },
+    {
+      "type": "standard",
+      "title": "Crime/Mystery",
+      "output": {
+        "generic": [
+          {
+            "title": "I recommend And Then There Were None by Agatha Christie",
+            "source": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1391120695l/16299.jpg",
+            "response_type": "image"
+          }
+        ]
+      },
+      "conditions": "#Book_Genre_Crime",
+      "dialog_node": "node_2_1626277968423",
+      "previous_sibling": "node_9_1626277009999"
+    },
+    {
+      "type": "standard",
+      "title": "Drama Movie",
+      "output": {
+        "generic": [
+          {
+            "title": "Room (2015)",
+            "source": "https://upload.wikimedia.org/wikipedia/en/c/c2/Room_%282015_film%29.png",
+            "description": "IMDb 8.1/10",
+            "response_type": "image"
+          }
+        ]
+      },
+      "conditions": "#Drama_Movie",
+      "dialog_node": "node_2_1627745817146",
+      "previous_sibling": "node_5_1627746483839"
+    },
+    {
+      "type": "standard",
+      "title": "books",
+      "output": {
+        "generic": [
+          {
+            "title": "What genre would you like?",
+            "options": [
+              {
+                "label": "Classics",
+                "value": {
+                  "input": {
+                    "text": "Classics"
+                  }
+                }
+              },
+              {
+                "label": "Fiction",
+                "value": {
+                  "input": {
+                    "text": "Fiction"
+                  }
+                }
+              },
+              {
+                "label": "Crime/Mystery",
+                "value": {
+                  "input": {
+                    "text": "Crime/Mystery"
+                  }
+                }
+              },
+              {
+                "label": "Horror",
+                "value": {
+                  "input": {
+                    "text": "Horror book"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "conditions": "#Books",
+      "dialog_node": "node_3_1626275816724",
+      "previous_sibling": "node_4_1626201299913"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "title": "Hello, what topic would you like me to help you with?",
+            "options": [
+              {
+                "label": "Books",
+                "value": {
+                  "input": {
+                    "text": "Books"
+                  }
+                }
+              },
+              {
+                "label": "Movies",
+                "value": {
+                  "input": {
+                    "text": "Movies"
+                  }
+                }
+              },
+              {
+                "label": "Movies Based on Books",
+                "value": {
+                  "input": {
+                    "text": "Movies based on books"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "conditions": "#Hello",
+      "dialog_node": "node_4_1626201299913",
+      "previous_sibling": "node_8_1627745567177"
+    },
+    {
+      "type": "standard",
+      "title": "Horror Movie",
+      "output": {
+        "generic": [
+          {
+            "title": "I recommend It (2017)",
+            "source": "https://resizing.flixster.com/GBnHHBY88ShhGNT6XbORsGHDbj0=/206x305/v2/https://resizing.flixster.com/mNHqkBWJl6dUF09i8Zw2m-iohUU=/ems.ZW1zLXByZC1hc3NldHMvbW92aWVzLzI4NmNjMDE3LTJmNWYtNGM2MC04N2JlLTY4OGRiMzQxZjg3Ny53ZWJw",
+            "description": "7.3/10 IMDb",
+            "response_type": "image"
+          }
+        ]
+      },
+      "conditions": "#Horror_Movie",
+      "dialog_node": "node_4_1626290327262",
+      "previous_sibling": "node_7_1626290882648"
+    },
+    {
+      "type": "standard",
+      "title": "Horror based on book",
+      "output": {
+        "generic": [
+          {
+            "title": "It (2017)",
+            "source": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQeQ26eky-Cp_SXUJXxlgQTQEEc9esN9ctc7kXlaF8yzdvl2E3z",
+            "description": "IMDb 7.3/10",
+            "response_type": "image"
+          }
+        ]
+      },
+      "conditions": "#Horror_based_on_book",
+      "dialog_node": "node_4_1627746742815",
+      "previous_sibling": "node_6_1626275468914"
+    },
+    {
+      "type": "standard",
+      "title": "Movies",
+      "output": {
+        "generic": [
+          {
+            "title": "",
+            "options": [
+              {
+                "label": "Action",
+                "value": {
+                  "input": {
+                    "text": "Action Movie"
+                  }
+                }
+              },
+              {
+                "label": "Horror",
+                "value": {
+                  "input": {
+                    "text": "Horror Movie"
+                  }
+                }
+              },
+              {
+                "label": "Sci-Fi",
+                "value": {
+                  "input": {
+                    "text": "Science Fiction Movie"
+                  }
+                }
+              },
+              {
+                "label": "Drama",
+                "value": {
+                  "input": {
+                    "text": "Drama Movie"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "conditions": "#Movies",
+      "dialog_node": "node_5_1626290097907",
+      "previous_sibling": "node_10_1626278362315"
+    },
+    {
+      "type": "standard",
+      "title": "Science Fiction",
+      "output": {
+        "generic": [
+          {
+            "title": "I recommend The Martian (2015)",
+            "source": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTkKPZ7EIOafEsemyn6zTIDeGYthKC_Okgxi1eX6diuOT3xKWXQ",
+            "description": "8/10 IMDb",
+            "response_type": "image"
+          }
+        ]
+      },
+      "conditions": "#Science_Fiction",
+      "dialog_node": "node_5_1626291968684",
+      "previous_sibling": "node_4_1626290327262"
+    },
+    {
+      "type": "standard",
+      "title": "Mystery based on book",
+      "output": {
+        "generic": [
+          {
+            "title": "Gone girl (2014)",
+            "source": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ14WrqnG_i2DUCsgsqKIme4ya5XaiEaIoQfsxeOkhDsx6e5ESe",
+            "description": "IMDb 8.1/10",
+            "response_type": "image"
+          }
+        ]
+      },
+      "conditions": "#Mystery_based_on_book",
+      "dialog_node": "node_5_1627746483839",
+      "previous_sibling": "node_1_1627746625039"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "title": "Hello, what topic would you like me to help you with?",
+            "options": [
+              {
+                "label": "Books",
+                "value": {
+                  "input": {
+                    "text": "Books"
+                  }
+                }
+              },
+              {
+                "label": "Movies",
+                "value": {
+                  "input": {
+                    "text": "Movies"
+                  }
+                }
+              },
+              {
+                "label": "Movies Based on Books",
+                "value": {
+                  "input": {
+                    "text": "Movies based on books"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "node_6_1626275468914"
+    },
+    {
+      "type": "standard",
+      "title": "Action Movie",
+      "output": {
+        "generic": [
+          {
+            "title": "I recommend Inception (2010)",
+            "source": "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg",
+            "description": "8.8/10 IMDb",
+            "response_type": "image"
+          }
+        ]
+      },
+      "conditions": "#Action_Movie",
+      "dialog_node": "node_7_1626290882648",
+      "previous_sibling": "node_5_1626290097907"
+    },
+    {
+      "type": "standard",
+      "title": "Movies Based on Books",
+      "output": {
+        "generic": [
+          {
+            "title": "What genre would you like?",
+            "options": [
+              {
+                "label": "Drama",
+                "value": {
+                  "input": {
+                    "text": "Drama based on book"
+                  }
+                }
+              },
+              {
+                "label": "Thriller/Mystery",
+                "value": {
+                  "input": {
+                    "text": "Mystery based on book"
+                  }
+                }
+              },
+              {
+                "label": "Romance",
+                "value": {
+                  "input": {
+                    "text": "Romance based on book"
+                  }
+                }
+              },
+              {
+                "label": "Horror",
+                "value": {
+                  "input": {
+                    "text": "Horror based on book"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "conditions": "#Movies_based_on_Books",
+      "dialog_node": "node_8_1627745567177",
+      "previous_sibling": "node_2_1627745817146"
+    },
+    {
+      "type": "standard",
+      "title": "Thanks",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Glad to help :)"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Thanks",
+      "dialog_node": "node_9_1626275734061",
+      "previous_sibling": "node_10_1626292451940"
+    },
+    {
+      "type": "standard",
+      "title": "Fiction",
+      "output": {
+        "generic": [
+          {
+            "title": "I recommend the book To Kill a Mockingbird by Harper Lee",
+            "source": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1553383690l/2657.jpg",
+            "response_type": "image"
+          }
+        ]
+      },
+      "conditions": "#Book_Genres_Fiction",
+      "dialog_node": "node_9_1626277009999",
+      "previous_sibling": "node_2_1626274857331"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "intent_classification": {
+      "training_backend_version": "v2"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "Entertainment Bot",
+  "language": "en",
+  "description": ""
+}

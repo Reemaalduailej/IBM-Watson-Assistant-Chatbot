@@ -4,7 +4,7 @@
 
 ## Components and Usage of the Project
 
-The project contains an entertainment chatbot that gives you recommendations on books or movies based on What genre you choose.
+The project contains an entertainment chatbot that gives you recommendations on books or movies based on the genre you choose.
 
 You can simply preview the chatbot using the link below
 
